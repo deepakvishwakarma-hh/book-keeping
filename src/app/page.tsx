@@ -1,3 +1,4 @@
+import ReviewCard from "@/component/review-card";
 import Image from "next/image";
 import Link from "next/link";
 // import { Instagram, Facebook } from "lucide-react"
@@ -373,161 +374,82 @@ export default function Home() {
 
           {/* Testimonials */}
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-md p-6">
-              <div className="h-24 w-24 rounded-full bg-[#2a4741] mx-auto mb-4 overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
-                  alt="Testimonial"
-                  width={100}
-                  height={100}
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#2a4741"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </div>
-              <p className="text-[#2a4741] text-center mb-4">
-                "Ledger Data Solutions transformed our financial management.
-                Their expertise and attention to detail have been invaluable."
-              </p>
-              <p className="text-center font-medium text-[#2a4741]">
-                -NAME GOES HERE
-              </p>
-            </div>
-
-            <div className="bg-white rounded-md p-6">
-              <div className="h-24 w-24 rounded-full bg-[#2a4741] mx-auto mb-4 overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
-                  alt="Testimonial"
-                  width={100}
-                  height={100}
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#2a4741"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </div>
-              <p className="text-[#2a4741] text-center mb-4">
-                "Ledger Data Solutions saved me from spreadsheet chaos. Now, my
+            <ReviewCard
+              comment="Ledger Data Solutions saved me from spreadsheet chaos. Now, my
                 books are always accurate, and I have more time to focus on
                 growing my business."
-              </p>
-              <p className="text-center font-medium text-[#2a4741]">
-                -NAME GOES HERE
-              </p>
-            </div>
+              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
+              name="NAME GOES HERE"
+            />
 
-            <div className="bg-white rounded-md p-6">
-              <div className="h-24 w-24 rounded-full bg-[#2a4741] mx-auto mb-4 overflow-hidden">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
-                  alt="Testimonial"
-                  width={100}
-                  height={100}
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#2a4741"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </div>
-              <p className="text-[#2a4741] text-center mb-4">
-                "With Ledger Data Solutions, we get clear financial insights
-                every month. Their expertise has been key to our growth and
-                success."
-              </p>
-              <p className="text-center font-medium text-[#2a4741]">
-                -NAME GOES HERE
-              </p>
-            </div>
+            <ReviewCard
+              comment="Ledger Data Solutions saved me from spreadsheet chaos. Now, my
+                books are always accurate, and I have more time to focus on
+                growing my business."
+              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
+              name="NAME GOES HERE"
+            />
+
+            <ReviewCard
+              comment="Ledger Data Solutions saved me from spreadsheet chaos. Now, my
+                books are always accurate, and I have more time to focus on
+                growing my business."
+              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
+              name="NAME GOES HERE"
+            />
           </div>
         </div>
       </section>
 
       {/* FAQs Section */}
       <section id="faqs" className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[1.5fr_1fr] gap-10">
           <div>
-            <h2 className="text-5xl font-light text-[#4a4a4a] mb-8 font-heading">
+            <h2 className="text-5xl font-light text-[#4a4a4a] mb-8 font-heading tracking-wider">
               FREQUENTLY ASKED QUESTIONS
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-2">
               <div>
-                <h3 className="text-[#2a4741] font-medium">
-                  Q: Do I require a long-term contract for your services?
+                <h3 className="text-[#2a4741]  bg-[#c5d8d5] p-2 rounded-md">
+                  <b>Q:</b> Do I require a long-term contract for your services?
                 </h3>
-                <p className="text-[#2a4741]">
-                  A: No, long-term contracts are not a requirement. We offer
-                  flexible arrangements tailored to your specific needs.
+                <p className="text-[#2a4741] p-2">
+                  <b>A:</b> "No, long-term contracts are not a requirement. We
+                  offer flexible arrangements tailored to your specific needs.""
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[#2a4741] font-medium">
-                  Q: What's the first step to engage with you?
+                <h3 className="text-[#2a4741]  bg-[#c5d8d5] p-2 rounded-md">
+                  <b>Q:</b> What's the first step to engage with you?
                 </h3>
-                <p className="text-[#2a4741]">
-                  A: The initial step is to reach out via our online form or
-                  email. If needed, we can follow up with a call or video chat
-                  to discuss your financial needs.
+                <p className="text-[#2a4741] p-2">
+                  <b>A:</b> "The initial step is to reach out via our online
+                  form or email. If needed, we can follow up with a call or
+                  video chat to discuss your financial needs."
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[#2a4741] font-medium">
-                  Q: What are your fees?
+                <h3 className="text-[#2a4741]  bg-[#c5d8d5] p-2 rounded-md">
+                  <b>Q:</b> What are your fees?
                 </h3>
-                <p className="text-[#2a4741]">
-                  A: Pricing varies based on your business model, transactions,
-                  and accounts. Get a custom quote with a free consultation.
+                <p className="text-[#2a4741] p-2">
+                  <b>A:</b> Pricing varies based on your business model,
+                  transactions, and accounts. Get a custom quote with a free
+                  consultation.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[#2a4741] font-medium">
-                  Q: How will we maintain communication?
+                <h3 className="text-[#2a4741]  bg-[#c5d8d5] p-2 rounded-md">
+                  <b>Q:</b> How will we maintain communication?
                 </h3>
-                <p className="text-[#2a4741]">
-                  A: We utilize multiple channels including email, and video
-                  conferencing for efficient and clear communication. You'll
-                  receive regular updates to keep you fully informed.
+                <p className="text-[#2a4741] p-2">
+                  <b>A:</b> "We utilize multiple channels including email, and
+                  video conferencing for efficient and clear communication.
+                  You'll receive regular updates to keep you fully informed."
                 </p>
               </div>
             </div>
@@ -535,7 +457,7 @@ export default function Home() {
 
           <div className="flex items-center justify-center">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B080BA27B-149A-4AF1-8E73-003F7AF4F99E%7D-qmfvrVJyi3FmMF7dl03U3CIVmwxSar.png"
+              src="/faqs.jpg"
               alt="Financial documents"
               width={500}
               height={400}
@@ -548,15 +470,15 @@ export default function Home() {
       {/* Pre-Footer */}
       <section className="py-8 bg-[#c5d8d5] text-[#2a4741] text-center">
         <div className="max-w-5xl mx-auto px-4">
-          <p className="text-lg">
+          <p className="text-lg font-semibold">
             For further inquiries or to get started, send us an email to
-            schedule your consultation today.
+            schedule <br /> your consultation today.
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-[#2a4741]">
+      <section id="contact" className="bg-[#2f5653] mt-1">
         <div className="grid md:grid-cols-2">
           <div className="p-12 flex flex-col items-center">
             <div className="bg-white p-6 mb-8 w-32 h-32 flex items-center justify-center">
@@ -579,116 +501,117 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-[#c5d8d5] p-12">
-            <h2 className="text-4xl font-light text-[#2a4741] mb-8">
+          <div className="bg-[#9ebab7] p-12">
+            <h2 className="text-5xl font-light font-heading  text-white mb-16 mt-16 text-center">
               CONTACT US
             </h2>
 
-            <p className="text-[#2a4741] mb-8">
+            <p className="text-white mb-8 font-semibold text-xl text-center">
               "Let's get your finances on track. Reach out today to start a
               conversation about how we can help you manage and grow your
               business."
             </p>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center mr-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
+            <div className="grid lg:grid-cols-[1.5fr_1fr] gap-5">
+              <div className="space-y-4 mb-8 lg:border-r">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center mr-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <p className="text-white">info@ledgerdatasolutions.com</p>
                 </div>
-                <p className="text-[#2a4741]">info@ledgerdatasolutions.com</p>
-              </div>
 
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center mr-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                  </svg>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center mr-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <p className="text-white">www.ledgerdata.solutions.com</p>
                 </div>
-                <p className="text-[#2a4741]">www.ledgerdata.solutions.com</p>
-              </div>
 
-              <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center mr-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center mr-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <p className="text-white">123-456-7890</p>
                 </div>
-                <p className="text-[#2a4741]">123-456-7890</p>
+                <div className="mb-8 flex gap-5">
+                  <p className="text-white mb-2">FOLLOW US:</p>
+                  <div className="flex space-x-4">
+                    <a
+                      href="#"
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
+                    >
+                      {/* <Instagram     size={16} className="text-white" /> */}
+                    </a>
+                    <a
+                      href="#"
+                      className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
+                    >
+                      {/* <Facebook size={16} className="text-white" /> */}
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div className="mb-8">
-              <p className="text-[#2a4741] mb-2">FOLLOW US:</p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center"
-                >
-                  {/* <Instagram size={16} className="text-white" /> */}
-                </a>
-                <a
-                  href="#"
-                  className="w-8 h-8 rounded-full bg-[#2a4741] flex items-center justify-center"
-                >
-                  {/* <Facebook size={16} className="text-white" /> */}
-                </a>
+              <div>
+                <p className="text-white font-semibold text-lg">
+                  We offer expert bookkeeping, financial reporting, and business
+                  insights tailored to your unique needs. Get in touch now!
+                </p>
               </div>
-            </div>
-
-            <div>
-              <p className="text-[#2a4741]">
-                We offer expert bookkeeping, financial reporting, and business
-                insights tailored to your unique needs. Get in touch now!
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1e3330] text-white py-4 text-center text-sm">
+      <footer className="bg-[#2f5653] text-white py-4 text-center text-sm mt-1">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="flex justify-center space-x-4">
-            <Link href="/privacy-policy" className="hover:underline">
+          <div className="flex justify-center gap-10 text-[10px]">
+            <Link href="/privacy-policy" className=" uppercase  tracking-[8px]">
               PRIVACY POLICY
             </Link>
             <span>|</span>
-            <Link href="/terms" className="hover:underline">
+            <Link href="/terms" className=" uppercase tracking-[8px]">
               TERMS & CONDITIONS
             </Link>
           </div>
