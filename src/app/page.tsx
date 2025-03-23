@@ -45,9 +45,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative h-[500px]">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 md:w-[60%] w-[100%]">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7BC6378303-CE10-4F18-8810-138F7FC8991C%7D-x7LrWqgCrZdVIQPOgj6czxByG47kkM.png"
+            src="/hero-2.jpg"
             alt="Office desk with computer and flowers"
             fill
             className="object-cover"
