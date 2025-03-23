@@ -5,20 +5,19 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen font-sans">
+    <main className="min-h-screen">
       {/* Navigation */}
-      <nav className="bg-[#2a4741] text-white p-4">
+      <nav className="bg-[#2f5653] text-white p-4">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center bg-white justify-center">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Ledger Data Solutions"
-              width={50}
-              height={50}
-              className="mr-2"
+              width={60}
+              height={60}
             />
           </Link>
-          <div className="hidden md:flex space-x-6 text-sm">
+          <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold">
             <Link href="/" className="hover:text-gray-300">
               HOME
             </Link>
@@ -54,17 +53,17 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 border grid">
-          <div className="max-w-5xl mx-auto flex justify-end items-center border w-full">
-            <div className="bg-[#c5d8d5] p-10 max-w-md mx-8 border-[#2a4741] border">
-              <h1 className="text-4xl font-light text-[#2a4741] mb-4 font-heading text-center tracking-wider">
+        <div className="absolute inset-0 grid">
+          <div className="max-w-5xl mx-auto flex justify-end items-center  w-full">
+            <div className="bg-[#b5cfcd] p-10 max-w-md mx-8 border-[#2a4741] border">
+              <h1 className="text-4xl font-light text-[#4a4a4a] mb-4 font-heading text-center tracking-[5px]">
                 YOUR PATH TO FINANCIAL CONFIDENCE
               </h1>
-              <p className="text-[#2a4741] mb-6 text-center font-semibold">
+              <p className="text-[#4a4a4a] mb-6 text-center font-bold">
                 Guiding Your Business <br /> to Clarity and Success
               </p>
-              <button className="bg-[#4a4a4a] text-white py-2 px-8 rounded-full hover:bg-opacity-90 transition mx-auto block">
-                CONTACT US TODAY!
+              <button className="bg-[#4a4a4a] text-white py-2 px-16 rounded-full hover:bg-opacity-90 transition mx-auto block text-xs tracking-wide">
+                CONTACT US <br /> TODAY!
               </button>
             </div>
           </div>
@@ -88,7 +87,7 @@ export default function Home() {
               matters—growing your business.
             </p>
 
-            <h3 className="text-xl font-medium text-[#2a4741] mt-6 mb-2">
+            <h3 className="text-xl font-bold text-[#4a4a4a] mt-6 mb-2">
               Experience and Credentials:
             </h3>
             <p className="text-[#2a4741] mb-4">
@@ -99,7 +98,7 @@ export default function Home() {
               passion to help businesses thrive.
             </p>
 
-            <h3 className="text-xl font-medium text-[#2a4741] mt-6 mb-2">
+            <h3 className="text-xl font-bold text-[#4a4a4a] mt-6 mb-2">
               What We Believe:
             </h3>
             <p className="text-[#2a4741]">
@@ -127,58 +126,66 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Banner */}
-      <section className="bg-[#2a4741] text-white py-12">
-        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[2fr_1fr] gap-8 items-center">
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Why Choose Us</h2>
-            <div className="space-y-4">
-              <div className="flex flex-wrap">
-                <p className="font-medium">Personalized Service - </p>
-                <p>Solutions tailored to your unique needs</p>
+      <section className="bg-[#2f5653] text-white py-12">
+        <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[2fr_1fr] gap-2 items-center">
+          <div className="flex justify-between flex-col gap-10">
+            <div>
+              <h2 className="text-2xl font-semibold mb-6">Why Choose Us</h2>
+              <div className="space-y-4">
+                <div className="flex flex-wrap">
+                  <p className="font-bold">Personalized Service - </p>
+                  <p>Solutions tailored to your unique needs</p>
+                </div>
+                <div className="flex flex-wrap">
+                  <p className="font-bold">Transparency - </p>
+                  <p>Clear, easy-to-understand reports and insights.</p>
+                </div>
+                <div className="flex flex-wrap">
+                  <p className="font-bold">Expertise - </p>
+                  <p>Certified professionals with 10+ years of experience.</p>
+                </div>
+                <div className="flex flex-wrap">
+                  <p className="font-bold">Security - </p>
+                  <p>
+                    Your data's security is our top priority. We use
+                    industry-leading encryption to ensure your financial
+                    information is always protected and confidential.
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-wrap">
-                <p className="font-medium">Transparency - </p>
-                <p>Clear, easy-to-understand reports and insights.</p>
-              </div>
-              <div className="flex flex-wrap">
-                <p className="font-medium">Expertise - </p>
-                <p>Certified professionals with 10+ years of experience.</p>
-              </div>
-              <div className="flex flex-wrap">
-                <p className="font-medium">Security - </p>
-                <p>
-                  Your data's security is our top priority. We use
-                  industry-leading encryption to ensure your financial
-                  information is always protected and confidential.
-                </p>
-              </div>
+              <button className="mt-8 bg-white text-[#2a4741] py-2 px-20 rounded hover:bg-gray-100 transition block mx-auto tracking-[5px]">
+                BOOK NOW
+              </button>
             </div>
-            <button className="mt-8 bg-white text-[#2a4741] py-2 px-20 rounded hover:bg-gray-100 transition block mx-auto">
-              BOOK NOW
-            </button>
+            <div className="mt-auto">
+              <Image
+                src="/choose-us-2.jpg"
+                alt="Workspace with flowers and coffee"
+                width={800}
+                height={400}
+                className="rounded-md"
+              />
+            </div>
           </div>
-          <div>
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B6454A94D-A556-4D4A-8FB5-C52C28970B06%7D-pnWK4lwJbvlwnuI1G4rp9VGEeJuyqZ.png"
-              alt="Workspace with flowers and coffee"
-              width={500}
-              height={400}
-              className="rounded-md"
-            />
-          </div>
+          <div
+            className="bg-white h-full rounded-md overflow-hidden"
+            style={{
+              backgroundImage: "url('/choose-us-1.jpg')",
+            }}
+          ></div>
         </div>
       </section>
 
       {/* Services Section */}
       <section id="services" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-5xl font-light text-[#2a4741] text-center mb-12 font-heading">
+          <h2 className="text-6xl font-light text-[#4a4a4a] text-center mb-12 font-heading">
             SERVICES
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Service 1 */}
-            <div className="bg-[#c5d8d5] rounded-md p-6 flex flex-col h-full border border-[#2a4741]">
+            <div className="bg-[#b5cfcd] rounded-md p-6 flex flex-col h-full border border-[#2a4741]">
               <div className=" min-h-[100px] flex items-center justify-center">
                 <h3 className="text-2xl font-medium  text-[#4a4a4a] mb-4 font-heading tracking-wider">
                   CLEAN &<br />
@@ -210,13 +217,13 @@ export default function Home() {
               </ul>
 
               <div className="mt-auto">
-                <button className="bg-[#4a4a4a] text-white py-2 px-4 w-full rounded hover:bg-opacity-90 transition">
+                <button className="bg-[#4a4a4a] text-white py-2 px-4 w-full rounded hover:bg-opacity-90 transition text-sm ">
                   Book Your Tax Prep Consultation
                 </button>
 
-                <div className="mt-4 h-32 relative">
+                <div className="mt-4 h-[250px] relative">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B1A1DAFBD-E5AC-4836-AB37-5D675887A769%7D-IjG5OkQPrzrdUYns67MLBpc9tqxzaz.png"
+                    src="/service-1.jpg"
                     alt="Clean workspace"
                     fill
                     className="object-cover rounded-md"
@@ -226,7 +233,7 @@ export default function Home() {
             </div>
 
             {/* Service 2 */}
-            <div className="bg-[#c5d8d5] rounded-md p-6 flex flex-col h-full border border-[#2a4741]">
+            <div className="bg-[#b5cfcd] rounded-md p-6 flex flex-col h-full border border-[#2a4741]">
               <div className=" min-h-[100px] flex items-center justify-center">
                 <h3 className="text-2xl font-medium text-center text-[#4a4a4a] mb-4 font-heading tracking-wide">
                   MONTHLY
@@ -269,10 +276,10 @@ export default function Home() {
                   Organize Your Books Today
                 </button>
 
-                <div className="mt-4 h-32 relative">
+                <div className="mt-4 h-[250px] relative">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B1A1DAFBD-E5AC-4836-AB37-5D675887A769%7D-IjG5OkQPrzrdUYns67MLBpc9tqxzaz.png"
-                    alt="Coffee and workspace"
+                    src="/service-2.jpg"
+                    alt="Clean workspace"
                     fill
                     className="object-cover rounded-md"
                   />
@@ -281,7 +288,7 @@ export default function Home() {
             </div>
 
             {/* Service 3 */}
-            <div className="bg-[#c5d8d5] rounded-md p-6 flex flex-col h-full border border-[#2a4741]">
+            <div className="bg-[#b5cfcd] rounded-md p-6 flex flex-col h-full border border-[#2a4741]">
               <div className=" min-h-[100px] flex items-center justify-center">
                 <h3 className="text-2xl font-medium text-center text-[#4a4a4a]  mb-4 font-heading tracking-wide">
                   TAX
@@ -319,10 +326,10 @@ export default function Home() {
                   Plan Your Financial Future
                 </button>
 
-                <div className="mt-4 h-32 relative">
+                <div className="mt-4 h-[250px] relative">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B1A1DAFBD-E5AC-4836-AB37-5D675887A769%7D-IjG5OkQPrzrdUYns67MLBpc9tqxzaz.png"
-                    alt="Financial planning"
+                    src="/service-3.jpg"
+                    alt="Clean workspace"
                     fill
                     className="object-cover rounded-md"
                   />

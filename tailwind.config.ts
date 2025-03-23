@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        heading: ["Times New Roman", "monospace"],
+        heading: ["Playfair Display", "monospace"],
       }
     },
   },
