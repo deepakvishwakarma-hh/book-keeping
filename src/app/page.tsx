@@ -389,7 +389,7 @@ export default function Home() {
               comment="Ledger Data Solutions saved me from spreadsheet chaos. Now, my
                 books are always accurate, and I have more time to focus on
                 growing my business."
-              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
+              image="/review-1.jpg"
               name="NAME GOES HERE"
             />
 
@@ -397,7 +397,7 @@ export default function Home() {
               comment="Ledger Data Solutions saved me from spreadsheet chaos. Now, my
                 books are always accurate, and I have more time to focus on
                 growing my business."
-              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
+              image="/review-2.avif"
               name="NAME GOES HERE"
             />
 
@@ -405,7 +405,7 @@ export default function Home() {
               comment="Ledger Data Solutions saved me from spreadsheet chaos. Now, my
                 books are always accurate, and I have more time to focus on
                 growing my business."
-              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B3FEDE385-E4DD-4620-8F27-A14A15153891%7D-pFCVt8bzId6TZMWvLtjFUidGt5GOVi.png"
+              image="/review-3.jpg"
               name="NAME GOES HERE"
             />
           </div>
