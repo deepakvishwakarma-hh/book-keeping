@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-hidden">
       {/* Navigation */}
       <Navbar />
       {/* Hero Section */}
@@ -18,10 +18,10 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 grid">
+        <div className="absolute inset-0 grid ">
           <div className="max-w-5xl mx-auto flex justify-end items-center w-full">
             <div className="bg-[#b5cfcd] p-10 max-w-md mx-8 border-[#2a4741] border">
-              <h1 className="text-4xl font-light text-[#4a4a4a] mb-4 font-heading text-center tracking-[5px]">
+              <h1 className="md:text-4xl text-2xl font-light text-[#4a4a4a] mb-4 font-heading text-center tracking-[5px]">
                 YOUR PATH TO FINANCIAL CONFIDENCE
               </h1>
               <p className="text-[#4a4a4a] mb-6 text-center font-bold">
@@ -39,7 +39,7 @@ export default function Home() {
       <section id="about" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[1.5fr_1fr] gap-8">
           <div>
-            <h2 className="text-4xl font-light text-[#2a4741] mb-6 font-heading">
+            <h2 className="md:text-4xl text-2xl font-light text-[#2a4741] mb-6 font-heading">
               WELCOME TO
               <br />
               LEDGER DATA SOLUTIONS
@@ -148,7 +148,7 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-6xl font-light text-[#4a4a4a] text-center mb-12 font-heading">
+          <h2 className="md:text-5xl text-2xl font-light text-[#4a4a4a] text-center mb-12 font-heading">
             SERVICES
           </h2>
 
@@ -312,7 +312,7 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section id="why-choose-us" className="py-16 bg-[#c5d8d5]">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-5xl font-light text-[#2a4741] text-center mb-12 font-heading">
+          <h2 className="md:text-5xl text-2xl font-light text-[#2a4741] text-center mb-12 font-heading">
             WHY CHOOSE US?
           </h2>
 
@@ -381,7 +381,7 @@ export default function Home() {
       <section id="faqs" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[1.5fr_1fr] gap-10">
           <div>
-            <h2 className="text-5xl font-light text-[#4a4a4a] mb-8 font-heading tracking-wider">
+            <h2 className="md:text-5xl text-2xl font-light text-[#4a4a4a] mb-8 font-heading tracking-wider">
               FREQUENTLY ASKED QUESTIONS
             </h2>
 
@@ -437,7 +437,7 @@ export default function Home() {
               alt="Financial documents"
               width={500}
               height={400}
-              className="rounded-md"
+              className="rounded-md "
             />
           </div>
         </div>
@@ -477,8 +477,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-[#9ebab7] p-12">
-            <h2 className="text-5xl font-light font-heading  text-white mb-16 mt-16 text-center">
+          <div className="bg-[#9ebab7] md:p-12 p-5">
+            <h2 className="md:text-5xl text-2xl font-light font-heading  text-white mb-16 mt-16 text-center">
               CONTACT US
             </h2>
 
@@ -590,11 +590,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#2f5653] text-white py-4 text-center text-sm mt-1">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="flex justify-center gap-10 text-[10px]">
+          <div className="flex justify-center md:gap-10 gap-2 text-[10px] flex-col md:flex-row">
             <Link href="/privacy-policy" className=" uppercase  tracking-[8px]">
               PRIVACY POLICY
             </Link>
-            <span>|</span>
+            <span className="md:block  hidden">|</span>
             <Link href="/terms" className=" uppercase tracking-[8px]">
               TERMS & CONDITIONS
             </Link>
