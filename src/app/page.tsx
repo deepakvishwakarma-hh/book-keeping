@@ -7,42 +7,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Navigation */}
-      <nav className="bg-[#2f5653] text-white p-4">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center bg-white justify-center">
-            <Image
-              src="/LOGO.svg"
-              alt="Ledger Data Solutions"
-              width={60}
-              height={60}
-            />
-          </Link>
-          <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold">
-            <Link href="/" className="hover:text-gray-300">
-              HOME
-            </Link>
-            <Link href="#about" className="hover:text-gray-300">
-              ABOUT US
-            </Link>
-            <Link href="#services" className="hover:text-gray-300">
-              SERVICES
-            </Link>
-            <Link href="#why-choose-us" className="hover:text-gray-300">
-              WHY CHOOSE US?
-            </Link>
-            <Link href="#testimonials" className="hover:text-gray-300">
-              TESTIMONIALS
-            </Link>
-            <Link href="#faqs" className="hover:text-gray-300">
-              FAQS
-            </Link>
-            <Link href="#contact" className="hover:text-gray-300">
-              CONTACT
-            </Link>
-          </div>
-        </div>
-      </nav>
-
+      <Navbar />
       {/* Hero Section */}
       <section className="relative h-[500px]">
         <div className="absolute inset-0 md:w-[60%] w-[100%]">
@@ -640,3 +605,4 @@ export default function Home() {
   );
 }
 import Form from "./form";
+import Navbar from "./navbar";
