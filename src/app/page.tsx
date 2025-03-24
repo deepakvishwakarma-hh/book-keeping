@@ -517,11 +517,7 @@ export default function Home() {
               CONTACT US
             </h2>
 
-            <p className="text-white mb-8 font-semibold text-xl text-center">
-              "Let's get your finances on track. Reach out today to start a
-              conversation about how we can help you manage and grow your
-              business."
-            </p>
+            <Form />
 
             <div className="grid lg:grid-cols-[1.5fr_1fr] gap-5">
               <div className="space-y-4 mb-8 lg:border-r">
@@ -643,3 +639,4 @@ export default function Home() {
     </main>
   );
 }
+import Form from "./form";
