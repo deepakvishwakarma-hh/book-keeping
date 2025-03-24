@@ -11,7 +11,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center bg-white justify-center">
             <Image
-              src="/logo.svg"
+              src="/LOGO.svg"
               alt="Ledger Data Solutions"
               width={60}
               height={60}
