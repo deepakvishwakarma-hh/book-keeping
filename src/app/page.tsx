@@ -591,13 +591,25 @@ export default function Home() {
                       href="#"
                       className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
                     >
-                      {/* <Instagram     size={16} className="text-white" /> */}
+                      <Image
+                        src="/ig.png"
+                        alt="Office desk with computer and flowers"
+                        width={20}
+                        height={20}
+                        className="object-cover"
+                      />
                     </a>
                     <a
                       href="#"
                       className="w-8 h-8 rounded-full bg-white flex items-center justify-center"
                     >
-                      {/* <Facebook size={16} className="text-white" /> */}
+                      <Image
+                        src="/fb.png"
+                        alt="Office desk with computer and flowers"
+                        width={18}
+                        height={18}
+                        className="object-cover"
+                      />
                     </a>
                   </div>
                 </div>
