@@ -54,7 +54,7 @@ export default function Home() {
           />
         </div>
         <div className="absolute inset-0 grid">
-          <div className="max-w-5xl mx-auto flex justify-end items-center  w-full">
+          <div className="max-w-5xl mx-auto flex justify-end items-center w-full">
             <div className="bg-[#b5cfcd] p-10 max-w-md mx-8 border-[#2a4741] border">
               <h1 className="text-4xl font-light text-[#4a4a4a] mb-4 font-heading text-center tracking-[5px]">
                 YOUR PATH TO FINANCIAL CONFIDENCE
@@ -116,10 +116,14 @@ export default function Home() {
               style={{
                 boxShadow: "100px 100px 0 #2a4741",
               }}
-              className="object-cover rounded-md
-            
-              
-              "
+              className="object-cover rounded-md md:block hidden  "
+            />
+            <Image
+              src="/ideas.jpg"
+              alt="Lightbulb"
+              width={400}
+              height={500}
+              className="object-cover rounded-md md:hidden block "
             />
           </div>
         </div>
