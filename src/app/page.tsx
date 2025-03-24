@@ -28,7 +28,9 @@ export default function Home() {
                 Guiding Your Business <br /> to Clarity and Success
               </p>
               <button className="bg-[#4a4a4a] text-white py-2 px-16 rounded-full hover:bg-opacity-90 transition mx-auto block text-xs tracking-wide">
-                CONTACT US <br /> TODAY!
+                <Link href={"#contact"}>
+                  CONTACT US <br /> TODAY!
+                </Link>
               </button>
             </div>
           </div>
@@ -95,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Banner */}
-      <section className="bg-[#2f5653] text-white py-12">
+      <section id="why-choose-us" className="bg-[#2f5653] text-white py-12">
         <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-[2fr_1fr] gap-2 items-center">
           <div className="flex justify-between flex-col gap-10">
             <div>
@@ -123,7 +125,7 @@ export default function Home() {
                 </div>
               </div>
               <button className="mt-8 bg-white text-[#2a4741] py-2 px-20 rounded hover:bg-gray-100 transition block mx-auto tracking-[5px]">
-                BOOK NOW
+                <Link href={"#contact"}>BOOK NOW</Link>
               </button>
             </div>
             <div className="mt-auto">
@@ -310,7 +312,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-16 bg-[#c5d8d5]">
+      <section id="testimonials" className="py-16 bg-[#c5d8d5]">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="md:text-5xl text-2xl font-light text-[#2a4741] text-center mb-12 font-heading">
             WHY CHOOSE US?
