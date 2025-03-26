@@ -3,6 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 // import { Instagram, Facebook } from "lucide-react"
 
+export const metadata: Metadata = {
+  title: "Ledger Data Solutions",
+  description:
+    "Ledger Data Solutions offers expert bookkeeping, financial reporting, and business insights tailored to your unique needs. Get in touch now!",
+  keywords:
+    "bookkeeping, financial reporting, business insights, financial planning, tax preparation, tax planning, financial consulting, financial services, financial management, financial analysis, financial advice, financial solutions, financial support, financial guidance, financial expertise, financial security, financial success, financial future, financial confidence, financial clarity, financial decisions, financial tools, financial help, financial assistance, financial consultation",
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden">
@@ -614,3 +622,4 @@ export default function Home() {
 }
 import Form from "./form";
 import Navbar from "./navbar";
+import { Metadata } from "next";
