@@ -459,20 +459,20 @@ export default function Home() {
       <section id="contact" className="bg-[#2f5653] mt-1">
         <div className="grid md:grid-cols-2">
           <div className="p-12 flex flex-col items-center">
-            <div className="bg-white p-6 mb-8 w-32 h-32 flex items-center justify-center">
+            <div className="bg-white p-3-- mb-8 w-32 h-32 flex items-center justify-center">
               <Image
-                src="/logo.png"
+                src="/LOGO.svg"
                 alt="Ledger Data Solutions"
-                width={100}
-                height={100}
+                width={150}
+                height={150}
               />
             </div>
 
-            <div className="w-full max-w-xs h-36 bg-blue-100 mb-8">
+            <div className=" max-w-xs h-32 w-32 bg-blue-100 mb-8">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%7B166B456B-5F83-4762-9AAE-BB38A019F620%7D-5mxOGqj9VTN6OvX4rmQ0lymPlOiGlj.png"
+                src="/client.webp"
                 alt="Landscape"
-                width={200}
+                width={150}
                 height={150}
                 className="w-full h-full object-cover"
               />
