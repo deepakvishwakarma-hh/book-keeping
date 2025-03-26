@@ -21,16 +21,17 @@ const Form = () => {
 
     // API request
     try {
-      const response = await fetch("/api/contact", {
+      const res = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        // @ts-ignore
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-      if (response.ok) {
+      const result = await res.json();
+      if (res.ok) {
         alert("Form submitted successfully!");
         setFormData({
           name: "",
