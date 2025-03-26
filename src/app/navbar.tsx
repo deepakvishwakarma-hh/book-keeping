@@ -10,22 +10,22 @@ const Navbar = () => {
     filter: "invert(1) brightness(100%) grayscale(100%)",
   };
   return (
-    <nav className="bg-[#2f5653] text-white px-4">
+    <nav className="bg-[#2f5653] text-white p-4">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center bg-white--- justify-center">
+        <Link href="/" className="flex items-center bg-white justify-center">
           <Image
-            src="/LOGO.svg"
+            src="/LOGO3.png"
             alt="Ledger Data Solutions"
-            width={100}
+            width={120}
             height={50}
-            className="bg-cover"
-            style={logoStyle}
+            className="bg-cover py-1 rounded-md overflow-hidden"
+            // style={logoStyle}
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold py-4">
+        <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold">
           <Link href="/" className="hover:text-gray-300">
             HOME
           </Link>
