@@ -1,16 +1,25 @@
-import type { Metadata } from "next";
+import clsx from "clsx";
 import "./globals.css";
+import type { Metadata } from "next";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+import {
+  Inter,
+  Roboto_Mono,
+  Montserrat,
+  Playfair_Display,
+} from "next/font/google";
+
+const inter = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const roboto_mono = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-roboto-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
       <body>{children}</body>
     </html>
   );
