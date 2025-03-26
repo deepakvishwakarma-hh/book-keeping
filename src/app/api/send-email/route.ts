@@ -27,22 +27,21 @@ export async function POST(req: any) {
     try {
         // Create a transporter using your SMTP settings
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,  // e.g., 'smtp.yourdomain.com'
-            port: process.env.SMTP_PORT,  // e.g., 587 for TLS
-            secure: process.env.SMTP_PORT === '465',  // true for SSL
+            host: process.env.NEXT_PUBLIC_HOST,  // e.g., 'smtp.yourdomain.com'
+            port: process.env.NEXT_PUBLIC_PORT,  // e.g., 587 for TLS
             auth: {
-                user: process.env.SMTP_USER,  // Your email address
-                pass: process.env.SMTP_PASS,  // Your email password or app-specific password
+                user: process.env.NEXT_PUBLIC_USER,  // Your email address
+                pass: process.env.NEXT_PUBLIC_PASS,  // Your email password or app-specific password
             },
         });
 
         // Send the email
         await transporter.sendMail({
-            from: `"Your Company" <${process.env.SMTP_USER}>`,  // sender address
-            to: "deepakvish7354@gmail.com",  // recipient address
-            subject: "apple",  // email subject
-            text: "text",  // plain text body
-            html: "html",  // HTML body
+            from: process.env.NEXT_PUBLIC_USER,
+            to,
+            subject,
+            text,
+            html,
         });
 
         return new Response(JSON.stringify({ message: 'Email sent successfully!' }), {

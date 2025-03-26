@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 const Form = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     business_name: "",
@@ -18,7 +19,7 @@ const Form = () => {
   // Handle form submission
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
+    setLoading(true);
     // API request
     try {
       const res = await fetch("/api/send-email", {
@@ -45,6 +46,8 @@ const Form = () => {
       }
     } catch (error) {
       alert("Failed to submit form. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -111,10 +114,14 @@ const Form = () => {
         </label>
 
         <button
+          disabled={loading}
           className="bg-[#2f5653] text-white py-2 rounded-md hover:bg-[#24403f] transition"
           type="submit"
         >
-          Submit
+          {
+            // Show loading text if loading
+            loading ? "Loading..." : "Submit"
+          }
         </button>
       </form>
     </div>
