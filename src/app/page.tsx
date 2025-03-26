@@ -12,7 +12,7 @@ export default function Home() {
       <section className="relative h-[500px]">
         <div className="absolute inset-0 md:w-[60%] w-[100%]">
           <Image
-            src="/hero-2.jpg"
+            src="/hero-5.png"
             alt="Office desk with computer and flowers"
             fill
             className="object-cover"
