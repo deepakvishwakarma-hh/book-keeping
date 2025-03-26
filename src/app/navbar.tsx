@@ -25,7 +25,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold">
+        <div className="hidden lg:flex space-x-6 text-sm tracking-widest font-semibold">
           <Link href="/" className="hover:text-gray-300">
             HOME
           </Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(true)} className="md:hidden">
+        <button onClick={() => setIsOpen(true)} className="lg:hidden">
           <Menu size={32} />
         </button>
       </div>
