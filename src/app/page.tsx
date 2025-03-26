@@ -468,6 +468,12 @@ export default function Home() {
               />
             </div>
 
+            <div className="max-w-md text-center text-white mb-8 text-xl">
+              {'"'}Let’s get your finances on track. Reach out today to start a
+              conversation about how we can help you manage and grow your
+              business. {'"'}
+            </div>
+
             <div className=" max-w-xs h-32 w-32 bg-blue-100 mb-8">
               <Image
                 src="/client.webp"
