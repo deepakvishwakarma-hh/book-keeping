@@ -6,22 +6,26 @@ import { Menu, X } from "lucide-react"; // Icons for hamburger and close
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const logoStyle = {
+    filter: "invert(1) brightness(100%) grayscale(100%)",
+  };
   return (
-    <nav className="bg-[#2f5653] text-white p-4">
+    <nav className="bg-[#2f5653] text-white px-4">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center bg-white justify-center">
+        <Link href="/" className="flex items-center bg-white--- justify-center">
           <Image
             src="/LOGO.svg"
             alt="Ledger Data Solutions"
-            width={60}
-            height={60}
+            width={100}
+            height={50}
+            className="bg-cover"
+            style={logoStyle}
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold">
+        <div className="hidden md:flex space-x-6 text-sm tracking-widest font-semibold py-4">
           <Link href="/" className="hover:text-gray-300">
             HOME
           </Link>
