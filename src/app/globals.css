@@ -12,6 +12,10 @@ body {
   font-family: "Montserrat", monospace;
 }
 
+.font-heading {
+  font-family: "Playfair Display", serif;
+}
+
 h1 {
   font-family: "Playfair Display", serif;
 }

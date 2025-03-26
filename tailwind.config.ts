@@ -12,9 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        heading: ["Playfair Display", "monospace"],
-      }
+      // fontFamily: {
+      //   heading: ["Cormorant Garamond", "monospace"],
+      // }
     },
   },
   plugins: [],
