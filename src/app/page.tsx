@@ -484,14 +484,34 @@ export default function Home() {
               business. {'"'}
             </div>
 
-            <div className=" max-w-xs h-32 w-32 bg-blue-100 mb-8">
-              <Image
-                src="/client.webp"
-                alt="Landscape"
-                width={150}
-                height={150}
-                className="w-full h-full object-cover"
-              />
+            <div className="flex flex-wrap justify-center items-center gap-5">
+              <div className=" max-w-xs h-32 w-32 bg-blue-100 mb-8">
+                <Image
+                  src="/client.webp"
+                  alt="Landscape"
+                  width={150}
+                  height={150}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className=" max-w-xs h-32 w-32 bg-blue-100 mb-8">
+                <Image
+                  src="/2.png"
+                  alt="Landscape"
+                  width={150}
+                  height={150}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className=" max-w-xs h-32 w-32 bg-blue-100 mb-8">
+                <Image
+                  src="/3.png"
+                  alt="Landscape"
+                  width={150}
+                  height={150}
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
