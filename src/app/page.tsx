@@ -1,7 +1,9 @@
-import ReviewCard from "@/component/review-card";
-import Image from "next/image";
+import Form from "./form";
 import Link from "next/link";
-// import { Instagram, Facebook } from "lucide-react"
+import Navbar from "./navbar";
+import Image from "next/image";
+import { Metadata } from "next";
+import ReviewCard from "@/component/review-card";
 
 export const metadata: Metadata = {
   title: "Ledger Data Solutions",
@@ -540,7 +542,7 @@ export default function Home() {
                       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                     </svg>
                   </div>
-                  <p className="text-white">www.ledgerdata.solutions.com</p>
+                  <p className="text-white">www.ledgerdatasolutions.com</p>
                 </div>
 
                 <div className="flex items-center">
@@ -620,6 +622,3 @@ export default function Home() {
     </main>
   );
 }
-import Form from "./form";
-import Navbar from "./navbar";
-import { Metadata } from "next";
