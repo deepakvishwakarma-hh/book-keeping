@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 interface ReviewCardProps {
@@ -8,25 +10,15 @@ interface ReviewCardProps {
 
 const ReviewCard = ({ comment, image, name }: ReviewCardProps) => {
   return (
-    <div className="bg-white rounded-md p-6 border border-[#2a4741]">
-      {/* <div className="h-24 w-24 rounded-full bg-[#2a4741] mx-auto mb-4 overflow-hidden">
-        <Image
-          src={image}
-          alt="Testimonial"
-          width={100}
-          height={100}
-          className="object-cover"
-        />
-      </div> */}
-
+    <article className="bg-white rounded-md p-6 border border-[#2a4741]">
       <div className="flex items-center justify-center">
-        <img
-          src={image}
-          alt="Testimonial"
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={`Photo of ${name}`}
+          width={150}
+          height={150}
           style={{
-            width: "120px",
-            height: "120px",
-            backgroundSize: "cover",
+            objectFit: "cover",
             borderRadius: "50%",
             marginBottom: "2rem",
           }}
@@ -36,19 +28,22 @@ const ReviewCard = ({ comment, image, name }: ReviewCardProps) => {
       <div className="flex justify-center mb-4">
         <Image
           src="/comment.jpg"
-          alt="Testimonial"
+          alt=""
           width={80}
           height={80}
           className="object-cover"
+          aria-hidden="true"
         />
       </div>
-      <p className="text-[#2a4741] text-center mb-4">
-        {"'"}
+
+      <blockquote className="text-[#2a4741] text-center mb-4">
         {comment}
-        {"'"}
-      </p>
-      <p className="text-center font-medium text-[#2a4741]">{name}</p>
-    </div>
+      </blockquote>
+
+      <cite className="block text-center font-medium text-[#2a4741]">
+        {name}
+      </cite>
+    </article>
   );
 };
 
