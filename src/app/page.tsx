@@ -1,6 +1,5 @@
 import Form from "./form";
 import Link from "next/link";
-import Navbar from "./navbar";
 import Image from "next/image";
 import type { Metadata } from "next";
 import ReviewCard from "@/component/review-card";
@@ -16,17 +15,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* Skip to main content link for keyboard users */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-none"
-      >
-        Skip to main content
-      </a>
-
-      {/* Navigation */}
-      <Navbar />
-
       <main id="main-content" className="min-h-screen overflow-hidden">
         {/* Hero Section */}
         <section className="relative h-[500px]" aria-labelledby="hero-heading">
@@ -767,32 +755,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer
-        className="bg-[#2f5653] text-white py-4 text-center text-sm mt-1"
-        role="contentinfo"
-      >
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex justify-center md:gap-10 gap-2 text-[10px] flex-col md:flex-row">
-            <Link
-              href="/privacy-policy"
-              className="uppercase tracking-[8px] hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] rounded px-2"
-            >
-              PRIVACY POLICY
-            </Link>
-            <span className="md:block hidden" aria-hidden="true">
-              |
-            </span>
-            <Link
-              href="/terms"
-              className="uppercase tracking-[8px] hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] rounded px-2"
-            >
-              TERMS & CONDITIONS
-            </Link>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }

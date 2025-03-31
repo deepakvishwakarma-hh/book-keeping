@@ -72,14 +72,6 @@ const Navbar = () => {
 
   return (
     <header>
-      {/* Skip to main content link for keyboard users */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-none"
-      >
-        Skip to main content
-      </a>
-
       <nav className="bg-[#2f5653] text-white p-4" aria-label="Main navigation">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           {/* Logo */}

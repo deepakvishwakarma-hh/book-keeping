@@ -1,13 +1,9 @@
-import clsx from "clsx";
 import "./globals.css";
 import type { Metadata } from "next";
 
-import {
-  Inter,
-  Roboto_Mono,
-  Montserrat,
-  Playfair_Display,
-} from "next/font/google";
+import Navbar from "./navbar";
+import Footer from "./footer";
+import { Montserrat, Playfair_Display } from "next/font/google";
 
 const inter = Montserrat({
   subsets: ["latin"],
@@ -33,7 +29,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
-      <body>{children}</body>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-none"
+      >
+        Skip to main content
+      </a>
+      <body>
+        <Navbar />
+        {children}
+      </body>
+      <Footer />
     </html>
   );
 }
