@@ -1,133 +1,312 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Icons for hamburger and close
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const logoStyle = {
-    filter: "invert(1) brightness(100%) grayscale(100%)",
+  const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const firstFocusableElementRef = useRef<HTMLAnchorElement>(null);
+  const lastFocusableElementRef = useRef<HTMLAnchorElement>(null);
+
+  // Handle keyboard navigation and focus trapping in the mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+
+      // Close menu on ESC key
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+        return;
+      }
+
+      // Trap focus within the menu
+      if (e.key === "Tab") {
+        // If shift + tab on first element, move to last element
+        if (
+          e.shiftKey &&
+          document.activeElement === firstFocusableElementRef.current
+        ) {
+          e.preventDefault();
+          lastFocusableElementRef.current?.focus();
+        }
+        // If tab on last element, move to first element
+        else if (
+          !e.shiftKey &&
+          document.activeElement === lastFocusableElementRef.current
+        ) {
+          e.preventDefault();
+          firstFocusableElementRef.current?.focus();
+        }
+      }
+    };
+
+    // Focus the close button when menu opens
+    if (isOpen) {
+      closeButtonRef.current?.focus();
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
+  // Check if a link is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    // For hash links, check if the current URL includes the hash
+    if (href.startsWith("#")) {
+      return pathname?.includes(href) || false;
+    }
+    return false;
   };
+
   return (
-    <nav className="bg-[#2f5653] text-white p-4">
-      <div className="max-w-5xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center bg-white justify-center">
-          <Image
-            src="/LOGO3.png"
-            alt="Ledger Data Solutions"
-            width={120}
-            height={50}
-            className="bg-cover py-1 rounded-md overflow-hidden"
-            // style={logoStyle}
-          />
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-6 text-sm tracking-widest font-semibold">
-          <Link href="/" className="hover:text-gray-300">
-            HOME
-          </Link>
-          <Link href="#about" className="hover:text-gray-300">
-            ABOUT US
-          </Link>
-          <Link href="#services" className="hover:text-gray-300">
-            SERVICES
-          </Link>
-          <Link href="#why-choose-us" className="hover:text-gray-300">
-            WHY CHOOSE US?
-          </Link>
-          <Link href="#testimonials" className="hover:text-gray-300">
-            TESTIMONIALS
-          </Link>
-          <Link href="#faqs" className="hover:text-gray-300">
-            FAQS
-          </Link>
-          <Link href="#contact" className="hover:text-gray-300">
-            CONTACT
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(true)} className="lg:hidden">
-          <Menu size={32} />
-        </button>
-      </div>
-
-      {/* Mobile Sidebar Menu */}
-      <div
-        className={`fixed inset-y-0 left-0 w-64 bg-[#2f5653] text-white shadow-lg transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50`}
+    <header>
+      {/* Skip to main content link for keyboard users */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:outline-none"
       >
-        {/* Close Button */}
-        <button onClick={() => setIsOpen(false)} className="p-4">
-          <X size={32} />
-        </button>
+        Skip to main content
+      </a>
 
-        {/* Mobile Navigation Links */}
-        <div className="flex flex-col space-y-4 px-6 text-lg tracking-widest font-semibold">
+      <nav className="bg-[#2f5653] text-white p-4" aria-label="Main navigation">
+        <div className="max-w-5xl mx-auto flex justify-between items-center">
+          {/* Logo */}
           <Link
             href="/"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
+            className="flex items-center bg-white justify-center"
+            aria-label="Ledger Data Solutions - Home"
           >
-            HOME
+            <Image
+              src="/LOGO3.png"
+              alt=""
+              width={120}
+              height={50}
+              className="bg-cover py-1 rounded-md overflow-hidden"
+              aria-hidden="true"
+            />
+            <span className="sr-only">Ledger Data Solutions</span>
           </Link>
-          <Link
-            href="#about"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            ABOUT US
-          </Link>
-          <Link
-            href="#services"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            SERVICES
-          </Link>
-          <Link
-            href="#why-choose-us"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            WHY CHOOSE US?
-          </Link>
-          <Link
-            href="#testimonials"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            TESTIMONIALS
-          </Link>
-          <Link
-            href="#faqs"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            FAQS
-          </Link>
-          <Link
-            href="#contact"
-            className="hover:text-gray-300"
-            onClick={() => setIsOpen(false)}
-          >
-            CONTACT
-          </Link>
-        </div>
-      </div>
 
-      {/* Overlay when menu is open */}
-      {isOpen && (
+          {/* Desktop Menu */}
+          <div
+            className="hidden lg:flex space-x-6 text-sm tracking-widest font-semibold"
+            role="menubar"
+            aria-label="Main menu"
+          >
+            <Link
+              href="/"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("/") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("/") ? "page" : undefined}
+            >
+              HOME
+            </Link>
+            <Link
+              href="#about"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#about") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#about") ? "true" : undefined}
+            >
+              ABOUT US
+            </Link>
+            <Link
+              href="#services"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#services") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#services") ? "true" : undefined}
+            >
+              SERVICES
+            </Link>
+            <Link
+              href="#why-choose-us"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#why-choose-us") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#why-choose-us") ? "true" : undefined}
+            >
+              WHY CHOOSE US?
+            </Link>
+            <Link
+              href="#testimonials"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#testimonials") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#testimonials") ? "true" : undefined}
+            >
+              TESTIMONIALS
+            </Link>
+            <Link
+              href="#faqs"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#faqs") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#faqs") ? "true" : undefined}
+            >
+              FAQS
+            </Link>
+            <Link
+              href="#contact"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#contact") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#contact") ? "true" : undefined}
+            >
+              CONTACT
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            ref={menuButtonRef}
+            onClick={() => setIsOpen(true)}
+            className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-white"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label="Open main menu"
+          >
+            <Menu size={32} aria-hidden="true" />
+            <span className="sr-only">Open main menu</span>
+          </button>
+        </div>
+
+        {/* Mobile Sidebar Menu */}
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsOpen(false)}
-        ></div>
-      )}
-    </nav>
+          id="mobile-menu"
+          ref={menuRef}
+          className={`fixed inset-y-0 left-0 w-64 bg-[#2f5653] text-white shadow-lg transform ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-in-out z-50`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Main menu"
+        >
+          <div className="flex flex-col h-full">
+            {/* Close Button */}
+            <button
+              ref={closeButtonRef}
+              onClick={() => setIsOpen(false)}
+              className="p-4 self-end focus:outline-none focus:ring-2 focus:ring-white rounded"
+              aria-label="Close main menu"
+            >
+              <X size={32} aria-hidden="true" />
+              <span className="sr-only">Close main menu</span>
+            </button>
+
+            {/* Mobile Navigation Links */}
+            <nav className="flex flex-col space-y-4 px-6 text-lg tracking-widest font-semibold">
+              <Link
+                ref={firstFocusableElementRef}
+                href="/"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("/") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("/") ? "page" : undefined}
+              >
+                HOME
+              </Link>
+              <Link
+                href="#about"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#about") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#about") ? "true" : undefined}
+              >
+                ABOUT US
+              </Link>
+              <Link
+                href="#services"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#services") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#services") ? "true" : undefined}
+              >
+                SERVICES
+              </Link>
+              <Link
+                href="#why-choose-us"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#why-choose-us")
+                    ? "underline underline-offset-4"
+                    : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#why-choose-us") ? "true" : undefined}
+              >
+                WHY CHOOSE US?
+              </Link>
+              <Link
+                href="#testimonials"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#testimonials")
+                    ? "underline underline-offset-4"
+                    : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#testimonials") ? "true" : undefined}
+              >
+                TESTIMONIALS
+              </Link>
+              <Link
+                href="#faqs"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#faqs") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#faqs") ? "true" : undefined}
+              >
+                FAQS
+              </Link>
+              <Link
+                ref={lastFocusableElementRef}
+                href="#contact"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#contact") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#contact") ? "true" : undefined}
+              >
+                CONTACT
+              </Link>
+            </nav>
+          </div>
+        </div>
+
+        {/* Overlay when menu is open */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+            role="presentation"
+          ></div>
+        )}
+      </nav>
+    </header>
   );
 };
 
