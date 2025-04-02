@@ -590,7 +590,7 @@ export default function Home() {
                 </div>
                 <div className="max-w-xs h-32 w-32 bg-blue-100 mb-8">
                   <Image
-                    src="/2.png"
+                    src="/tags/1.svg"
                     alt="Client logo"
                     width={150}
                     height={150}
@@ -599,7 +599,7 @@ export default function Home() {
                 </div>
                 <div className="max-w-xs h-32 w-32 bg-blue-100 mb-8">
                   <Image
-                    src="/3.png"
+                    src="/tags/2.svg"
                     alt="Client logo"
                     width={150}
                     height={150}
