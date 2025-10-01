@@ -1,14 +1,22 @@
 
-// @ts-ignore
 import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(req: any) {
+export async function POST(req: NextRequest) {
+    try {
+        const response = await req.json();
 
-    const response = await req.json()
+        // Validate required fields
+        if (!response.name || !response.email || !response.message) {
+            return NextResponse.json(
+                { error: 'Missing required fields: name, email, and message are required' },
+                { status: 400 }
+            );
+        }
 
-    const to = 'deepakvish7354@gmail.com'  // Send to Deepak's email
-    const subject = `New Contact Form Submission from ${response.name} - ${response.business_name}`
-    const text = `
+        const to = 'deepakvish7354@gmail.com';  // Send to Deepak's email
+        const subject = `New Contact Form Submission from ${response.name} - ${response.business_name}`
+        const text = `
 New Contact Form Submission - Action Required
 
 You have received a new contact form submission from your website:
@@ -25,7 +33,7 @@ ${response.message}
 Please respond to this inquiry promptly.
 This message was sent from the Ledger Data Solutions contact form.
     `
-    const html = `
+        const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <h2 style="color: #2f5653; border-bottom: 2px solid #2f5653; padding-bottom: 10px;">New Contact Form Submission - Action Required</h2>
         
@@ -52,9 +60,7 @@ This message was sent from the Ledger Data Solutions contact form.
     </div>
     `
 
-    // const { to, subject, text, html } = await req.json();  // Get the email data from the body
-    try {
-        // Create a transporter using your SMTP settings
+        // Create a transporter using SMTP settings
         const transporter = nodemailer.createTransport({
             host: 'mail.ledgerdatasolutions.com',  // SMTP server
             port: 465,  // SMTP port for SSL
@@ -74,20 +80,18 @@ This message was sent from the Ledger Data Solutions contact form.
             html,
         });
 
-        return new Response(JSON.stringify({ message: 'Email sent successfully!' }), {
-            status: 200,
-        });
+        return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
     } catch (error) {
         console.error('Error sending email:', error);
-        return new Response(JSON.stringify({ error: 'Failed to send email' }), {
-            status: 500,
-        });
+        return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
     }
 }
 
-export async function GET(req: any) {
-    return new Response(JSON.stringify({ message: 'This is a GET request' }), {
-        status: 200,
-    });
+export async function GET(req: NextRequest) {
+    return NextResponse.json({
+        message: 'Contact form API endpoint',
+        methods: ['POST'],
+        description: 'Send contact form data via POST request'
+    }, { status: 200 });
 }
 

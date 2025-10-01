@@ -11,14 +11,15 @@ const nextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://book-keeping-mauve.vercel.app/api/:path*",
-      },
-    ];
-  },
+  // Removed rewrites to allow local API routes to work
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/:path*",
+  //       destination: "https://book-keeping-mauve.vercel.app/api/:path*",
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;
