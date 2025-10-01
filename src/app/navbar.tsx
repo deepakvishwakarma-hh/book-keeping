@@ -93,7 +93,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div
-            className="hidden lg:flex space-x-6 text-sm tracking-widest font-semibold"
+            className="hidden lg:flex space-x-6 text-[.8rem] tracking-widest font-semibold"
             role="menubar"
             aria-label="Main menu"
           >
@@ -118,6 +118,16 @@ const Navbar = () => {
               ABOUT US
             </Link>
             <Link
+              href="#difference"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#services") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#difference") ? "true" : undefined}
+            >
+              THE DIFFERENCE
+            </Link>
+            <Link
               href="#services"
               className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
                 isActive("#services") ? "underline underline-offset-4" : ""
@@ -126,26 +136,6 @@ const Navbar = () => {
               aria-current={isActive("#services") ? "true" : undefined}
             >
               SERVICES
-            </Link>
-            <Link
-              href="#why-choose-us"
-              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
-                isActive("#why-choose-us") ? "underline underline-offset-4" : ""
-              }`}
-              role="menuitem"
-              aria-current={isActive("#why-choose-us") ? "true" : undefined}
-            >
-              WHY CHOOSE US?
-            </Link>
-            <Link
-              href="#testimonials"
-              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
-                isActive("#testimonials") ? "underline underline-offset-4" : ""
-              }`}
-              role="menuitem"
-              aria-current={isActive("#testimonials") ? "true" : undefined}
-            >
-              TESTIMONIALS
             </Link>
             <Link
               href="#faqs"
@@ -165,7 +155,17 @@ const Navbar = () => {
               role="menuitem"
               aria-current={isActive("#contact") ? "true" : undefined}
             >
-              CONTACT
+              CONTACT US
+            </Link>
+            <Link
+              href="#signin"
+              className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2f5653] px-2 py-1 rounded ${
+                isActive("#contact") ? "underline underline-offset-4" : ""
+              }`}
+              role="menuitem"
+              aria-current={isActive("#signin") ? "true" : undefined}
+            >
+              CLIENT SIGN-IN
             </Link>
           </div>
 

@@ -140,10 +140,6 @@ const Form = () => {
 
   return (
     <div className="pb-10">
-      <h2 id="form-heading" className="text-2xl font-bold mb-4">
-        Contact Us
-      </h2>
-
       {/* Status message with aria-live for screen readers */}
       {submitStatus.type && (
         <div
