@@ -3,17 +3,6 @@
 import nodemailer from 'nodemailer';
 
 export async function POST(req: any) {
-    // Handle CORS preflight request
-    if (req.method === 'OPTIONS') {
-        return new Response(null, {
-            status: 200,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            },
-        });
-    }
 
     const response = await req.json()
 
@@ -87,21 +76,11 @@ This message was sent from the Ledger Data Solutions contact form.
 
         return new Response(JSON.stringify({ message: 'Email sent successfully!' }), {
             status: 200,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            },
         });
     } catch (error) {
         console.error('Error sending email:', error);
         return new Response(JSON.stringify({ error: 'Failed to send email' }), {
             status: 500,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST, OPTIONS',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            },
         });
     }
 }
@@ -109,11 +88,6 @@ This message was sent from the Ledger Data Solutions contact form.
 export async function GET(req: any) {
     return new Response(JSON.stringify({ message: 'This is a GET request' }), {
         status: 200,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-        },
     });
 }
 
