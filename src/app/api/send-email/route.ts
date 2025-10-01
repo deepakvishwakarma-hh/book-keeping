@@ -2,16 +2,28 @@
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Add CORS headers
+function addCorsHeaders(response: NextResponse) {
+    response.headers.set('Access-Control-Allow-Origin', '*');
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return response;
+}
+
+export async function OPTIONS(req: NextRequest) {
+    return addCorsHeaders(new NextResponse(null, { status: 200 }));
+}
+
 export async function POST(req: NextRequest) {
     try {
         const response = await req.json();
 
         // Validate required fields
-        if (!response.name || !response.email || !response.message) {
-            return NextResponse.json(
-                { error: 'Missing required fields: name, email, and message are required' },
+        if (!response.name || !response.email || !response.message || !response.business_name || !response.phone_number) {
+            return addCorsHeaders(NextResponse.json(
+                { error: 'Missing required fields: name, business_name, email, phone_number, and message are required' },
                 { status: 400 }
-            );
+            ));
         }
 
         const to = 'deepakvish7354@gmail.com';  // Send to Deepak's email
@@ -80,18 +92,18 @@ This message was sent from the Ledger Data Solutions contact form.
             html,
         });
 
-        return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
+        return addCorsHeaders(NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 }));
     } catch (error) {
         console.error('Error sending email:', error);
-        return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+        return addCorsHeaders(NextResponse.json({ error: 'Failed to send email' }, { status: 500 }));
     }
 }
 
 export async function GET(req: NextRequest) {
-    return NextResponse.json({
+    return addCorsHeaders(NextResponse.json({
         message: 'Contact form API endpoint',
         methods: ['POST'],
         description: 'Send contact form data via POST request'
-    }, { status: 200 });
+    }, { status: 200 }));
 }
 
