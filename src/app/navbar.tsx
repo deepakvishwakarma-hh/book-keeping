@@ -230,6 +230,16 @@ const Navbar = () => {
                 ABOUT US
               </Link>
               <Link
+                href="#difference"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#difference") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#difference") ? "true" : undefined}
+              >
+                THE DIFFERENCE
+              </Link>
+              <Link
                 href="#services"
                 className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
                   isActive("#services") ? "underline underline-offset-4" : ""
@@ -238,30 +248,6 @@ const Navbar = () => {
                 aria-current={isActive("#services") ? "true" : undefined}
               >
                 SERVICES
-              </Link>
-              <Link
-                href="#why-choose-us"
-                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
-                  isActive("#why-choose-us")
-                    ? "underline underline-offset-4"
-                    : ""
-                }`}
-                onClick={() => setIsOpen(false)}
-                aria-current={isActive("#why-choose-us") ? "true" : undefined}
-              >
-                WHY CHOOSE US?
-              </Link>
-              <Link
-                href="#testimonials"
-                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
-                  isActive("#testimonials")
-                    ? "underline underline-offset-4"
-                    : ""
-                }`}
-                onClick={() => setIsOpen(false)}
-                aria-current={isActive("#testimonials") ? "true" : undefined}
-              >
-                TESTIMONIALS
               </Link>
               <Link
                 href="#faqs"
@@ -274,7 +260,6 @@ const Navbar = () => {
                 FAQS
               </Link>
               <Link
-                ref={lastFocusableElementRef}
                 href="#contact"
                 className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
                   isActive("#contact") ? "underline underline-offset-4" : ""
@@ -282,7 +267,18 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 aria-current={isActive("#contact") ? "true" : undefined}
               >
-                CONTACT
+                CONTACT US
+              </Link>
+              <Link
+                ref={lastFocusableElementRef}
+                href="#signin"
+                className={`hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white px-2 py-1 rounded ${
+                  isActive("#signin") ? "underline underline-offset-4" : ""
+                }`}
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive("#signin") ? "true" : undefined}
+              >
+                CLIENT SIGN-IN
               </Link>
             </nav>
           </div>
