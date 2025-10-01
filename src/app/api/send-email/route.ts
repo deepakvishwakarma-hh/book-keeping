@@ -6,7 +6,7 @@ export async function POST(req: any) {
 
     const response = await req.json()
 
-    const to = 'info@ledgerdatasolutions.com'  // Send to Deepak's email
+    const to = 'deepakvish7354@gmail.com'  // Send to Deepak's email
     const subject = `New Contact Form Submission from ${response.name} - ${response.business_name}`
     const text = `
 New Contact Form Submission - Action Required
