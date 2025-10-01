@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
             ));
         }
 
-        const to = 'info@ledgerdatasolutioms.com';  // Send to Deepak's email
+        const to = 'info@ledgerdatasolutions.com';  // Send to Deepak's email
         const subject = `New Contact Form Submission from ${response.name} - ${response.business_name}`
         const text = `
 New Contact Form Submission - Action Required
