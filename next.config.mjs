@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  crossOrigin: "anonymous",
   output: "export",
   trailingSlash: true,
   images: {
@@ -11,6 +10,14 @@ const nextConfig = {
         hostname: "hebbkx1anhila5yf.public.blob.vercel-storage.com",
       },
     ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://book-keeping-mauve.vercel.app/api/:path*",
+      },
+    ];
   },
 };
 
