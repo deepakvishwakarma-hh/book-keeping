@@ -11,7 +11,12 @@ function addCorsHeaders(response: NextResponse) {
 }
 
 export async function OPTIONS(req: NextRequest) {
-    return addCorsHeaders(new NextResponse(null, { status: 200 }));
+    const response = new NextResponse(null, { status: 200 });
+    response.headers.set('Access-Control-Allow-Origin', '*');
+    response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    response.headers.set('Access-Control-Max-Age', '86400');
+    return response;
 }
 
 export async function POST(req: NextRequest) {
