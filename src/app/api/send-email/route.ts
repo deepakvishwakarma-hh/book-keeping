@@ -22,6 +22,7 @@ export async function OPTIONS(req: NextRequest) {
 export async function POST(req: NextRequest) {
     try {
         const response = await req.json();
+        console.log('Received request data:', response);
 
         // Validate required fields
         if (!response.name || !response.email || !response.message || !response.business_name || !response.phone_number) {
@@ -89,13 +90,14 @@ This message was sent from the Ledger Data Solutions contact form.
         });
 
         // Send the email
-        await transporter.sendMail({
+        const emailResult = await transporter.sendMail({
             from: 'noreply@ledgerdatasolutions.com',
             to,
             subject,
             text,
             html,
         });
+        console.log('Email sent successfully:', emailResult);
 
         return addCorsHeaders(NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 }));
     } catch (error) {
