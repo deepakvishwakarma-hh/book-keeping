@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
             ));
         }
 
-        const to = 'deepakvish7354@gmail.com';  // Send to Deepak's email
+        const to = 'Info@ledgerdatasolutioms.com';  // Send to Deepak's email
         const subject = `New Contact Form Submission from ${response.name} - ${response.business_name}`
         const text = `
 New Contact Form Submission - Action Required
