@@ -1,6 +1,5 @@
 import Form from "./form";
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import ReviewCard from "@/component/review-card";
 
@@ -19,12 +18,10 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-[500px]" aria-labelledby="hero-heading">
           <div className="absolute inset-0 md:w-[60%] w-[100%]">
-            <Image
+            <img
               src="/hero-5.png"
               alt="Professional office workspace with computer and decorative flowers"
-              fill
-              className="object-cover"
-              priority
+              className="object-cover w-full h-full"
             />
           </div>
           <div className="absolute inset-0 grid">
@@ -116,8 +113,7 @@ export default function Home() {
                   <p className="text-center text-lg font-semibold">
                     Let&apos;s Scale <br /> Up Your
                   </p>
-                  <Image
-                    quality={100}
+                  <img
                     src="/business.jpg"
                     alt="Accuracy"
                     width={1000}
@@ -128,8 +124,7 @@ export default function Home() {
                   <p className="text-center text-lg font-semibold">
                     Impulsemos <br /> tu
                   </p>
-                  <Image
-                    quality={100}
+                  <img
                     src="/nagotio.jpg"
                     alt="Tech-Smart"
                     width={1000}
@@ -140,8 +135,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center">
-              <Image
-                quality={100}
+              <img
                 src="/client.jpg"
                 alt="Lightbulb representing innovative financial ideas and solutions"
                 width={400}
@@ -151,8 +145,7 @@ export default function Home() {
                 }}
                 className="object-cover rounded-md md:block hidden"
               />
-              <Image
-                quality={100}
+              <img
                 src="/client.jpg"
                 alt="Lightbulb representing innovative financial ideas and solutions"
                 width={400}
@@ -202,7 +195,7 @@ export default function Home() {
                 </dl>
               </div>
               <div className="mt-auto">
-                <Image
+                <img
                   src="/choose-us-2.jpg"
                   alt="Professional workspace with flowers and coffee"
                   width={800}
@@ -285,11 +278,10 @@ export default function Home() {
                   </button>
 
                   <div className="mt-4 h-[250px] relative">
-                    <Image
+                    <img
                       src="/service-1.jpg"
                       alt="Clean and organized workspace representing our clean-up services"
-                      fill
-                      className="object-cover rounded-md"
+                      className="object-cover rounded-md w-full h-full"
                     />
                   </div>
                 </div>
@@ -346,11 +338,10 @@ export default function Home() {
                   </button>
 
                   <div className="mt-4 h-[250px] relative">
-                    <Image
+                    <img
                       src="/service-2.jpg"
                       alt="Financial reports and documents representing our monthly bookkeeping services"
-                      fill
-                      className="object-cover rounded-md"
+                      className="object-cover rounded-md w-full h-full"
                     />
                   </div>
                 </div>
@@ -400,11 +391,10 @@ export default function Home() {
                   </button>
 
                   <div className="mt-4 h-[250px] relative">
-                    <Image
+                    <img
                       src="/service-3.jpg"
                       alt="Tax documents and calculator representing our tax preparation support"
-                      fill
-                      className="object-cover rounded-md"
+                      className="object-cover rounded-md w-full h-full"
                     />
                   </div>
                 </div>
@@ -498,7 +488,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center">
-              <Image
+              <img
                 src="/faqs.jpg"
                 alt="Financial documents and calculator representing frequently asked questions about our services"
                 width={500}
@@ -532,7 +522,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2">
             <div className="p-12 flex flex-col items-center justify-center space-y-10">
               <div className="bg-white p-3 mb-8 w-60 h-40 flex items-center justify-center scale-110">
-                <Image
+                <img
                   src="/LOGO.svg"
                   alt="Ledger Data Solutions Logo"
                   className="object-cover"
@@ -553,7 +543,7 @@ export default function Home() {
                 aria-label="Client logos"
               >
                 <div className="max-w-xs h-32 w-32 bg-transparent mb-8">
-                  <Image
+                  <img
                     src="/client.webp"
                     alt="Client logo"
                     width={150}
@@ -562,7 +552,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="max-w-xs h-32 w-32 bg-blue-100 mb-8">
-                  <Image
+                  <img
                     src="/cer1.jpg"
                     alt="Client logo"
                     width={150}
@@ -571,7 +561,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="max-w-xs h-32 w-32 bg-blue-100 mb-8">
-                  <Image
+                  <img
                     src="/cer2.jpg"
                     alt="Client logo"
                     width={150}
@@ -692,7 +682,7 @@ export default function Home() {
                         className="w-8 h-8 rounded-full bg-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#2a4741]"
                         aria-label="Follow us on Instagram"
                       >
-                        <Image
+                        <img
                           src="/ig.png"
                           alt=""
                           width={20}
@@ -708,7 +698,7 @@ export default function Home() {
                         className="w-8 h-8 rounded-full bg-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#2a4741]"
                         aria-label="Follow us on Facebook"
                       >
-                        <Image
+                        <img
                           src="/fb.png"
                           alt=""
                           width={18}
@@ -724,7 +714,7 @@ export default function Home() {
                         className="w-8 h-8 rounded-full bg-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-[#2a4741]"
                         aria-label="Follow us on LinkedIn"
                       >
-                        <Image
+                        <img
                           src="/ln.png"
                           alt=""
                           width={18}

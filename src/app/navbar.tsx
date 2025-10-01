@@ -1,6 +1,5 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Icons for hamburger and close
 import { usePathname } from "next/navigation";
@@ -80,9 +79,9 @@ const Navbar = () => {
             className="flex items-center bg-white justify-center"
             aria-label="Ledger Data Solutions - Home"
           >
-            <Image
+            <img
               src="/LOGO3.png"
-              alt=""
+              alt="Ledger Data Solutions Logo"
               width={120}
               height={50}
               className="bg-cover py-1 rounded-md overflow-hidden"
